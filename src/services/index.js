@@ -103,7 +103,7 @@ router
         'api': {
             'path': 'http://beisen.me' + context.path,
             'parem': context.parem
-        }
+        } 
     }
 })
 .get('/getApiList', function*(next) {
