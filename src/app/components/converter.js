@@ -1,27 +1,21 @@
 /*
- * @Author: yangfengchu
+ * @Author: KikyoMiao
  * @Date:   2016-09-16 23:08:41
  * @Last Modified 2016-10-08
- * @Last Modified time: 2016-10-08 14:02:57
+ * @Last Modified time: 2016-10-08 15:27:19
  */
+// usage
+// jsonCover(json, schema, []);
+// console.log(JSON.stringify(schema, null, 4));
+function isType(value) {
+    return Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
+}
 
-'use strict';
+function isEmpty(value) {
+    return (Array.isArray(value) && value.length === 0) || (Object.prototype.isPrototypeOf(value) && Object.keys(value).length === 0);
+}
 
-
-var json = {
-    "address": {
-        "streetAddress": "21 2nd Street",
-        "city": "New York"
-    },
-    "phoneNumber": [{
-        "location": "home",
-        "code": 44
-    }]
-};
-
-var schema = {};
-
-function jsonCover(json, obj, array) {
+export default function jsonCover(json, obj, array) {
     if (!isEmpty(json)) {
         for (var i in json) {
             (function(name) {
@@ -51,14 +45,3 @@ function jsonCover(json, obj, array) {
         return json.length === +json.length ? [] : {};
     }
 }
-
-function isType(value) {
-    return Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-}
-
-function isEmpty(value) {
-    return (Array.isArray(value) && value.length === 0) || (Object.prototype.isPrototypeOf(value) && Object.keys(value).length === 0);
-}
-
-jsonCover(json, schema, []);
-console.log(JSON.stringify(schema, null, 4));
