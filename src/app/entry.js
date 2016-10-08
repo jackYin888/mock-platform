@@ -14,7 +14,6 @@ import reducers from './reducers/index'
 // const reducer = combineReducers({
 //     ...reducers,
 // })
-
 // const DevTools = createDevTools(
 //     <DockMonitor toggleVisibilityKey="ctrl-h" changePositionKey="ctrl-q">
 //     <LogMonitor theme="tomorrow" preserveScrollTop={false} />
@@ -30,15 +29,7 @@ const history = syncHistoryWithStore(browserHistory, store)
 
 render(
     <Provider store={store}>
-        <div>
-            <Router history={history}>
-                <Route path="/" component={IndexPage}>
-                <IndexRoute component={IndexPage}/>
-                <Route path="list" component={ListPage}/>
-                <Route path="detail" component={DetailPage}/>
-                </Route>
-            </Router>
-        </div>
+    <IndexPage/>
     </Provider>,
     document.getElementById('app'));
 

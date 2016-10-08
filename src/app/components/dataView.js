@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import { connect } from 'react-redux'
-// import Highlight from 'react-highlight'
 import { desimplify } from 'simplifr'
 import { information } from './constant'
 import { isObject } from '../../util/tools'
