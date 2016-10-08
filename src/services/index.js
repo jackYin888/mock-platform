@@ -85,14 +85,13 @@ router
     let result = yield converter.iIterator(context.schema)
     console.log(saveState, result)
     if (saveState) {
-            //api文件追加到API List.js
-            fs.appendFile('./src/services/apiList.js', JSON.stringify(this.request.body) + '****filter***', function (err) {
-                if (err) {
-                    return console.error(err)
-                }
-                console.log('写入成功!')
-
-            })
+            //api文件追加到apiList.js
+            //读取文件－>追加新数据->写入内容
+            const originalData = fs.readFileSync("./src/services/apiList.js",'utf8');
+            const originalData2Array =JSON.parse(originalData);
+            originalData2Array.push(this.request.body);
+            const newData =JSON.stringify(originalData2Array)
+            fs.writeFileSync("./src/services/apiList.js",newData);
         }
     if (!saveState) return this.body = {
             'createState': false
@@ -108,19 +107,9 @@ router
     }
 })
 .get('/getApiList', function*(next) {
-        
         //读取apiList文件
-        let data = fs.readFileSync('./src/services/apiList1.js', 'utf-8');
-        //格式化文件内容
-        let dataArr = data.toString().split('****filter***');
-
-        dataArr = dataArr.filter(function(item) {
-                return item.length > 0
-            }
-        )
-        console.log(dataArr)
-
-        this.body = dataArr;
+        const data = fs.readFileSync('./src/services/apiList.js', 'utf-8');
+        this.body = data;
 
     })
 
