@@ -82,7 +82,7 @@ router
     //request body
     let context = this.request.body;
     let { path, apiName } = this.request.body;
-    let filePath = rootPath + path;
+    let filePath = rootPath + path; 
     //save request body
     yield creator.ensureDirectoryExistence(filePath)
     let saveState = yield creator.ensureFileExistence(context, filePath)
