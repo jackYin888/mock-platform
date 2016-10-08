@@ -1,10 +1,10 @@
 {
-    "name": "material-ui-example-browserify",
+    "name": "Mock-platForm",
     "version": "0.15.0",
-    "description": "Sample project that uses Material-UI",
+    "description": "full stack mock platform project with javascript",
     "repository": {
         "type": "git",
-        "url": "https://github.com/callemall/material-ui.git"
+        "url": "https://github.com/abnerCrack/mock-platform.git"
     },
     "scripts": {
         "start": "webpack-dev-server --progress --colors --hot --inline --config webpack.js",
