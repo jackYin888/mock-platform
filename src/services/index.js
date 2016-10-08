@@ -84,6 +84,16 @@ router
     let saveState = yield creator.ensureFileExistence(context, filePath)
     let result = yield converter.iIterator(context.schema)
     console.log(saveState, result)
+    if (saveState) {
+            //api文件追加到API List.js
+            fs.appendFile('./src/services/apiList.js', JSON.stringify(this.request.body) + '****filter***', function (err) {
+                if (err) {
+                    return console.error(err)
+                }
+                console.log('写入成功!')
+
+            })
+        }
     if (!saveState) return this.body = {
             'createState': false
         }
@@ -97,6 +107,22 @@ router
         }
     }
 })
+.get('/getApiList', function*(next) {
+        
+        //读取apiList文件
+        let data = fs.readFileSync('./src/services/apiList1.js', 'utf-8');
+        //格式化文件内容
+        let dataArr = data.toString().split('****filter***');
+
+        dataArr = dataArr.filter(function(item) {
+                return item.length > 0
+            }
+        )
+        console.log(dataArr)
+
+        this.body = dataArr;
+
+    })
 
 //init the koa-router
 app
@@ -104,4 +130,4 @@ app
     .use(router.allowedMethods());
 
 //listen
-app.listen(3003);
+app.listen(3010);

@@ -64,7 +64,7 @@ module.exports = {
     devServer: {
         filename: 'dist/main.bundle.js',
         host: '0.0.0.0',
-        port: 8086,
+        port: 8088,
         historyApiFallback: true,
         hot: true,
         inline: true,

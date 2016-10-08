@@ -13,6 +13,7 @@ import { connect } from "react-redux"
 import * as actionCreators from '../actions/index'
 import { bindActionCreators } from 'redux'
 import ajax from './ajax';
+import fetch from 'fetch'
 let { href } = window.location;
 const { editUrl, editMethod } = actionCreators;
 class ButtonList extends Component {
@@ -28,8 +29,59 @@ class ButtonList extends Component {
         alert('保存成功')
         console.log(resp)
     }
-    submitHandler(data) {
-        ajax.req('post', href, this.postCallback, this.postError);
+    submitHandler() {
+        const data = {
+            "apiName": "getUserData",
+            "name": "获取用户数据",
+            "method": "GET",
+            "note": "备注",
+            "company": "beisen",
+            "version": "v2",
+            "group": "tita",
+
+            "parem": {
+                "filter": "name"
+            },
+            "path": "/beisen/api/v2/tita/getUserData",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "user": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "$ref": "#/definitions/positiveInt"
+                            },
+                            "name": {
+                                "type": "string",
+                                "faker": "name.findName"
+                            },
+                            "email": {
+                                "type": "string",
+                                "format": "email",
+                                "faker": "internet.email"
+                            }
+                        },
+                        "required": ["id", "name", "email"]
+                    }
+                },
+                "required": ["user"],
+                "definitions": {
+                    "positiveInt": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "exclusiveMinimum": true
+                    }
+                }
+            }
+        }
+
+        fetch('/createSchema', {
+            method: 'POST',
+            body: data
+        }).then(function (data) {
+            debugger
+        })
     }
     render() {
         return (
@@ -38,8 +90,8 @@ class ButtonList extends Component {
                     <h4>配置编辑器</h4>
                 </div>
                 <div className="col-md-6">
-                    <strong>保存接口(第三步)：</strong>
-                <button onClick={this.submitHandler} type="button" className="btn btn-xs btn-raised btn-success">保存API</button>
+                    <strong>保存接口(第三步) ：</strong>
+                    <button onClick={this.submitHandler} type="button" className="btn btn-xs btn-raised btn-success">保存API</button>
                 </div>
             </div>
         );
