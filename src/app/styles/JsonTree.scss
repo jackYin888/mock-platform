@@ -1,0 +1,285 @@
+@font-face {
+    font-family: "iconfont";
+    src: url('./iconfont.eot?t=1473314373');
+    /* IE9*/
+    src: url('./iconfont.eot?t=1473314373#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('./iconfont.woff?t=1473314373') format('woff'), /* chrome, firefox */
+    url('./iconfont.ttf?t=1473314373') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('./iconfont.svg?t=1473314373#iconfont') format('svg');
+    /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 20px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-suoxiao:before {
+    content: "\e61b";
+}
+
+.icon-fangda:before {
+    content: "\e61a";
+}
+
+.icon-jiahao:before {
+    content: "\e611";
+}
+
+.icon-jianhao:before {
+    content: "\e610";
+}
+
+.icon-shanchu:before {
+    content: "\e728";
+}
+
+.icon-xinjianneirong:before {
+    content: "\e675";
+}
+
+.icon-codearray:before {
+    content: "\e75e";
+}
+
+.icon-plus:before {
+    content: "\e66e";
+}
+
+.icon-squareplus:before {
+    content: "\e8b5";
+}
+
+.icon-minus:before {
+    content: "\e668";
+}
+
+.icon-squareminus:before {
+    content: "\e6d6";
+}
+
+.generator-wrap {
+    position: absolute;
+    height: 400px;
+    width: 450px;
+}
+
+.method-list1,
+.faker-api-list1 {
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 300;
+    border: 0;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    li {
+        overflow: hidden;
+        position: relative;
+        font-size: 14px;
+        box-sizing: border-box;
+        a {
+            display: block;
+            padding: 3px 20px;
+            clear: both;
+            font-weight: 400;
+            line-height: 1.42857143;
+            white-space: nowrap;
+            color: #337ab7;
+            text-decoration: none;
+        }
+    }
+}
+
+//主色
+$C1:#004170;
+$C2:#005999;
+$C3:#1687d9;
+$C3Hover:#1E7BC0;
+$C4:#8CCCF8;
+$C5:#084E82;
+//中性色
+$M1:#36434D;
+$M2:#667580;
+$M3:#ACB7BF;
+$M4:#E4EBF0;
+$M5:#F5F8FA;
+$M6:#ffffff;
+$Ease:cubic-bezier(.25,
+.1,
+.25,
+1);
+$Spring:cubic-bezier(.66,
+1.65,
+.23,
+.87);
+$Spring2:cubic-bezier(.44,
+1.53,
+.32,
+.92);
+$Linear:linear;
+@charset "utf-8";
+//通用雪碧图路径
+$font-family-H:'Helvetica Neue',
+Tahoma,
+'PingFang SC',
+'Hiragino Sans GB',
+'Microsoft YaHei',
+STHeitiSC,
+sans-serif;
+$font-family-A:"Helvetica Neue",
+Tahoma,
+"PingFang SC",
+"Hiragino Sans GB",
+SimSun,
+STHeitiSC,
+sans-serif;
+@font-face {
+    font-family: "iconfont";
+    src: url('./iconfont.eot?t=1473314373');
+    /* IE9*/
+    src: url('./iconfont.eot?t=1473314373#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('./iconfont.woff?t=1473314373') format('woff'), /* chrome, firefox */
+    url('./iconfont.ttf?t=1473314373') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('./iconfont.svg?t=1473314373#iconfont') format('svg');
+    /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 20px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bianji:before {
+    content: "\3486";
+}
+
+.icon-tianjiaadd143:before {
+    content: "\e610";
+}
+
+.icon-shanchu:before {
+    content: "\e6aa";
+}
+
+.icon-xinzeng:before {
+    content: "\e64a";
+}
+
+.icon-jiahao:before {
+    content: "\e611";
+}
+
+.icon-jianhao:before {
+    content: "\e610";
+}
+
+.json-tree-view {
+    font-size: 16px;
+    ul {
+        margin: 0;
+        list-style: none;
+    }
+    .object {
+        cursor: pointer;
+        padding-top: 8px;
+        padding-left: 15px;
+        display: inline-block;
+    }
+    .array {
+        cursor: pointer;
+    }
+    .count {
+        opacity: .5;
+        font-style: italic;
+    }
+    .leaf {
+        /*
+        input {
+            width: 50px;
+            height: 20px;
+            line-height: 20px;
+
+        }
+        */
+    }
+    .field-wrap {
+        padding: 5px;
+    }
+    .tree-li {
+        font-size: 14px;
+        list-style-type: none;
+        /*background-color: #deecf7;*/
+        &:hover {}
+    }
+    .bracket {
+        opacity: .5;
+    }
+    .add-icon {
+        display: inline-block;
+        opacity: .5;
+        color: green;
+        margin: 0px 2px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .remove-icon {
+        display: inline-block;
+        opacity: .5;
+        color: red;
+        margin: 0px 2px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .hidden {
+        display: none;
+    }
+    .not-visible {
+        visibility: hidden;
+    }
+}
+
+.json-tree-icon {
+    display: inline-block;
+    font-size: 22px;
+    margin-left: 0;
+    margin-top: 6px;
+    margin-right: 2px;
+    float: left;
+    -webkit-transition: 200ms;
+    transition: 200ms;
+    -webkit-transform: rotateZ(-90deg);
+    transform: rotateZ(-90deg);
+    position: relative;
+    cursor: pointer;
+    &.open {
+        -webkit-transform: rotateZ(0deg);
+        transform: rotateZ(0deg);
+        opacity: 1;
+    }
+}

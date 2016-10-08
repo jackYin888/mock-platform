@@ -1,2 +1,1 @@
-# mock-platform
-mock-platform
+#Mock 数据平台 -dev

@@ -1,0 +1,27 @@
+@charset "utf-8";
+//通用雪碧图路径
+$font-family-H:'Helvetica Neue',Tahoma,'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', STHeitiSC, sans-serif;
+$font-family-A:"Helvetica Neue",Tahoma,"PingFang SC","Hiragino Sans GB",SimSun,STHeitiSC,sans-serif;
+
+//主色
+    $C1:#004170;
+    $C2:#005999;
+    $C3:#1687d9;
+    $C3Hover:#1E7BC0;
+    $C4:#8CCCF8;
+    $C5:#084E82;
+//中性色
+    $M1:#36434D;
+    $M2:#667580;
+    $M3:#ACB7BF;
+    $M4:#E4EBF0;
+    $M5:#F5F8FA;
+    $M6:#ffffff;
+    $Ease:cubic-bezier(.25,.1,.25,1);
+    $Spring:cubic-bezier(.66,1.65,.23,.87);
+    $Spring2:cubic-bezier(.44,1.53,.32,.92);
+    $Linear:linear;
+body{
+        padding-top: 50px;
+
+}
