@@ -1,8 +1,8 @@
 /*
  * @Author: yangfengchu
  * @Date:   2016-09-18 16:38:25
- * @Last Modified 2016-09-29
- * @Last Modified time: 2016-09-29 19:24:31
+ * @Last Modified 2016-10-08
+ * @Last Modified time: 2016-10-08 14:23:27
  */
 
 'use strict';
@@ -19,6 +19,10 @@ function isArray(_) {
 
 function isObject(_) {
     return Object.prototype.toString.call(_) === '[object Object]';
+}
+
+function isType(value) {
+    return Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
 }
 
 
@@ -74,9 +78,9 @@ class Leadin extends Component {
         // "[object Null]": "Null",
         // "[object Undefined]": "Undefined"
         let typeList = {
-            "[object String]": "random.word",
-            "[object Number]": "random.number",
-            "[object Boolean]": "random.boolean",
+            "[object String]": "string",
+            "[object Number]": "number",
+            "[object Boolean]": "boolean",
         }
         let data = simplify(jsonData)
         let newData = Object.keys(data).map((key, index) => {

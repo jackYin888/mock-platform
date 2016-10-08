@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import { connect } from 'react-redux'
-// import Highlight from 'react-highlight'
 import { desimplify } from 'simplifr'
 import { information } from './constant'
 import { isObject } from '../../util/tools'
@@ -14,34 +13,6 @@ class DataView extends Component {
         };
     }
     schemaGenerator() {
-        let { requestMethod, apiName, name } = this.props
-        let apiInfo = {
-            "apiName": apiName,
-            "name": name,
-            "method": requestMethod,
-            "note": "备注",
-            "company": "beisen",
-            "version": "v2",
-            "group": "tita",
-            "parem": {
-                "filter": "name"
-            },
-            "path": "/beisen/api/v2/tita/getUserData",
-            "schema": {}
-        }
-        let parameter = this.props.Parameter;
-        schema.type = "object";
-        schema.properties = new Object;
-        schema.required = new Array;
-
-        parameter.map((item, index) => {
-            schema.properties[item.mockey] = {
-                type: item.type,
-                faker: item.fakerValue
-            }
-            schema.required.push(item.mockey)
-        })
-
         //this.refs.code.innerText = JSON.stringify(schema, null, '\t')
         // console.log(this.refs)
     }

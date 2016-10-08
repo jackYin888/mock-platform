@@ -1,8 +1,8 @@
 /*
  * @Author: yangfengchu
  * @Date:   2016-08-31 11:25:30
- * @Last Modified 2016-10-05
- * @Last Modified time: 2016-10-05 09:31:50
+ * @Last Modified 2016-10-08
+ * @Last Modified time: 2016-10-08 16:20:26
  */
 
 'use strict';
@@ -12,11 +12,15 @@ const koa = require('koa'),
     router = require('koa-router')(),
     koaBody = require('koa-body')(),
     fs = require('fs'),
+    path = require('path'),
     faker = require('faker'),
     scaner = require('./scaner'),
+    //静态资源
+    serve = require('koa-static'),
     converter = require('./converter'),
     creator = require('./creator'),
     rootPath = __dirname,
+    staticPath = path.join(__dirname, '../../'),
     co = require('co'),
     domain = 'http://beisen.me';
 
@@ -115,8 +119,11 @@ router
 
 //init the koa-router
 app
+    .use(serve(staticPath))
     .use(router.routes())
     .use(router.allowedMethods());
 
+
 //listen
-app.listen(3003);
+app.listen(3001);
+console.log('listen to port 3001')
